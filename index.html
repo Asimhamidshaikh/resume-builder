@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Live Resume & Portfolio Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Action Header -->
+    <header class="no-print">
+      <div class="brand">
+        <h1>Resume Engine</h1>
+        <span class="badge">Live Builder</span>
+      </div>
+      <div class="actions">
+        <select id="theme-select">
+          <option value="theme-modern">Modern Minimalist</option>
+          <option value="theme-classic">Classic Academic</option>
+          <option value="theme-dark">Developer Dark</option>
+        </select>
+        <button id="btn-print" class="btn-primary">Export PDF / Print</button>
+      </div>
+    </header>
+
+    <main class="builder-container">
+      <!-- Left Panel: Form Controls -->
+      <aside class="editor-panel no-print">
+        <h2>Profile Details</h2>
+        
+        <div class="form-group">
+          <label for="in-name">Full Name</label>
+          <input type="text" id="in-name" placeholder="e.g. Alex Smith" value="Alex Smith">
+        </div>
+
+        <div class="form-group">
+          <label for="in-title">Professional Title</label>
+          <input type="text" id="in-title" placeholder="e.g. Full-Stack Developer & Student" value="Full-Stack Developer & Student">
+        </div>
+
+        <div class="form-group">
+          <label for="in-contact">Contact Info & Links</label>
+          <input type="text" id="in-contact" placeholder="alex@example.com | github.com/alex | Karachi, PK" value="alex@example.com | github.com/alex | Karachi, PK">
+        </div>
+
+        <div class="form-group">
+          <label for="in-summary">About / Summary</label>
+          <textarea id="in-summary" rows="3" placeholder="Brief professional summary...">Self-taught web developer and student building lightweight, high-utility tools and interactive web applications.</textarea>
+        </div>
+
+        <h2>Skills & Technologies</h2>
+        <div class="form-group">
+          <label for="in-skills">Skills (comma-separated)</label>
+          <input type="text" id="in-skills" placeholder="JavaScript, HTML5, CSS3, Git, Node.js" value="JavaScript, HTML5, CSS3, Git, Tesseract.js, UI Design">
+        </div>
+
+        <h2>Featured Projects</h2>
+        <div class="form-group">
+          <label for="in-p1-title">Project 1 Title</label>
+          <input type="text" id="in-p1-title" value="Flashcard Studio with OCR Scanner">
+          <label for="in-p1-desc">Project 1 Description</label>
+          <textarea id="in-p1-desc" rows="2">Web application that converts notes or photographed textbook pages into digital study decks in real time.</textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="in-p2-title">Project 2 Title</label>
+          <input type="text" id="in-p2-title" value="Interactive Web Applications Suite">
+          <label for="in-p2-desc">Project 2 Description</label>
+          <textarea id="in-p2-desc" rows="2">Collection of client-side web tools published via GitHub Pages, focused on high usability and zero dependencies.</textarea>
+        </div>
+      </aside>
+
+      <!-- Right Panel: Live Document Preview -->
+      <section class="preview-panel">
+        <div id="resume-document" class="resume-sheet theme-modern">
+          <header class="doc-header">
+            <h1 id="out-name">Alex Smith</h1>
+            <p id="out-title" class="doc-title">Full-Stack Developer & Student</p>
+            <p id="out-contact" class="doc-contact">alex@example.com | github.com/alex | Karachi, PK</p>
+          </header>
+
+          <hr class="doc-divider">
+
+          <section class="doc-section">
+            <h3>Summary</h3>
+            <p id="out-summary">Self-taught web developer and student building lightweight, high-utility tools and interactive web applications.</p>
+          </section>
+
+          <section class="doc-section">
+            <h3>Skills & Technologies</h3>
+            <div id="out-skills" class="skills-grid"></div>
+          </section>
+
+          <section class="doc-section">
+            <h3>Featured Projects</h3>
+            <div class="project-item">
+              <h4 id="out-p1-title">Flashcard Studio with OCR Scanner</h4>
+              <p id="out-p1-desc">Web application that converts notes or photographed textbook pages into digital study decks in real time.</p>
+            </div>
+            <div class="project-item">
+              <h4 id="out-p2-title">Interactive Web Applications Suite</h4>
+              <p id="out-p2-desc">Collection of client-side web tools published via GitHub Pages, focused on high usability and zero dependencies.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="no-print">
+      <p>Free open-source study & developer tool • Check out my other tools: <a href="https://yourusername.github.io/flashcard-studio" target="_blank">Flashcard Studio</a> | <a href="https://yourusername.github.io/utility-calculator" target="_blank">Utility Calculator</a></p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

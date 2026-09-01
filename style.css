@@ -1,0 +1,73 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; }
+body { background: #0f172a; color: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; }
+
+#app { display: flex; flex-direction: column; min-height: 100vh; }
+
+header { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 12px 24px; border-bottom: 1px solid #334155; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand h1 { font-size: 1.25rem; color: #38bdf8; }
+.badge { background: #38bdf8; color: #0f172a; font-size: 0.75rem; font-weight: bold; padding: 2px 8px; border-radius: 12px; }
+
+.actions { display: flex; gap: 12px; }
+select { background: #0f172a; color: #fff; border: 1px solid #334155; padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; }
+.btn-primary { background: #38bdf8; color: #0f172a; font-weight: bold; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+.btn-primary:hover { background: #0284c7; }
+
+.builder-container { display: flex; flex: 1; overflow: hidden; }
+
+/* Editor Sidebar */
+.editor-panel { width: 400px; background: #1e293b; border-right: 1px solid #334155; padding: 20px; overflow-y: auto; height: calc(100vh - 100px); }
+.editor-panel h2 { font-size: 1rem; color: #38bdf8; margin: 16px 0 8px 0; border-bottom: 1px solid #334155; padding-bottom: 4px; }
+.editor-panel h2:first-of-type { margin-top: 0; }
+
+.form-group { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.form-group label { font-size: 0.8rem; color: #94a3b8; }
+.form-group input, .form-group textarea { background: #0f172a; border: 1px solid #334155; color: #f8fafc; padding: 8px; border-radius: 6px; font-size: 0.85rem; }
+
+/* Document Preview Panel */
+.preview-panel { flex: 1; background: #0f172a; padding: 30px; overflow-y: auto; display: flex; justify-content: center; }
+
+/* Resume Document Standard Layout */
+.resume-sheet { width: 100%; max-width: 800px; min-height: 1000px; background: #ffffff; color: #0f172a; padding: 40px; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); height: fit-content; }
+
+/* Modern Theme */
+.resume-sheet.theme-modern { font-family: 'Inter', sans-serif; }
+.resume-sheet.theme-modern .doc-header h1 { color: #0284c7; font-size: 2.2rem; }
+.resume-sheet.theme-modern h3 { color: #0284c7; border-bottom: 2px solid #e2e8f0; padding-bottom: 4px; margin-bottom: 8px; text-transform: uppercase; font-size: 0.95rem; }
+
+/* Classic Theme */
+.resume-sheet.theme-classic { font-family: 'Georgia', serif; }
+.resume-sheet.theme-classic .doc-header h1 { color: #111827; font-size: 2rem; border-bottom: 1px solid #111827; padding-bottom: 6px; }
+.resume-sheet.theme-classic h3 { color: #111827; border-bottom: 1px solid #9ca3af; padding-bottom: 2px; margin-bottom: 8px; font-size: 1rem; }
+
+/* Dark Theme */
+.resume-sheet.theme-dark { background: #111827; color: #f3f4f6; }
+.resume-sheet.theme-dark .doc-header h1 { color: #38bdf8; }
+.resume-sheet.theme-dark h3 { color: #38bdf8; border-bottom: 1px solid #374151; }
+
+.doc-header h1 { line-height: 1.1; }
+.doc-title { font-weight: 600; font-size: 1.1rem; color: #475569; margin-top: 4px; }
+.theme-dark .doc-title { color: #9ca3af; }
+.doc-contact { font-size: 0.85rem; color: #64748b; margin-top: 4px; }
+.theme-dark .doc-contact { color: #9ca3af; }
+
+.doc-divider { border: 0; height: 1px; background: #e2e8f0; margin: 16px 0; }
+.doc-section { margin-top: 20px; }
+.doc-section p { font-size: 0.9rem; line-height: 1.5; }
+
+.skills-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-pill { background: #f1f5f9; color: #0f172a; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+.theme-dark .skill-pill { background: #1f2937; color: #38bdf8; }
+
+.project-item { margin-top: 10px; }
+.project-item h4 { font-size: 0.95rem; font-weight: bold; }
+
+footer { text-align: center; padding: 12px; font-size: 0.85rem; color: #64748b; background: #1e293b; border-top: 1px solid #334155; }
+footer a { color: #38bdf8; text-decoration: none; }
+
+/* PDF Export / Print Rules */
+@media print {
+  .no-print { display: none !important; }
+  body, .builder-container, .preview-panel { background: #fff !important; padding: 0 !important; margin: 0 !important; }
+  .resume-sheet { box-shadow: none !important; width: 100% !important; max-width: 100% !important; padding: 20px !important; }
+}
